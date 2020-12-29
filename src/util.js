@@ -12,16 +12,7 @@ function Chillpop() {
       color: ["#0E4466", "#77CBDE"],
       active: false,
     },
-    {
-      name: "Swimming",
-      artist: "Sleepy Fish",
-      cover:
-        "https://chillhop.com/wp-content/uploads/2020/07/25a182a6a21588b8f7ad5605ba1118a8ea61bdc2-1024x1024.jpg",
-      audio: "https://mp3.chillhop.com/serve.php/?mp3=7993",
-      id: uuidv4(),
-      color: ["#0E4466", "#77CBDE"],
-      active: false,
-    },
+
     {
       name: "Oasis",
       artist: "Makzo",
@@ -130,6 +121,16 @@ function Chillpop() {
       audio: "https://mp3.chillhop.com/serve.php/?mp3=11248",
       id: uuidv4(),
       color: ["#46659C", "#BFCB67"],
+      active: false,
+    },
+    {
+      name: "Swimming",
+      artist: "Sleepy Fish",
+      cover:
+        "https://chillhop.com/wp-content/uploads/2020/07/25a182a6a21588b8f7ad5605ba1118a8ea61bdc2-1024x1024.jpg",
+      audio: "https://mp3.chillhop.com/serve.php/?mp3=7993",
+      id: uuidv4(),
+      color: ["#0E4466", "#77CBDE"],
       active: false,
     },
   ];
