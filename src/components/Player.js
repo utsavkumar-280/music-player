@@ -58,34 +58,38 @@ const Player = ({
     setSongInfo({ ...songInfo, currentTime: e.target.value });
   };
 
-  const skipTrackHandler = (direction) => {
+  const skipTrackHandler = async (direction) => {
     let currentIndex = songs.findIndex((song) => song.id === currentSong.id);
     if (direction === "skip-forward") {
-      setCurrentSong(songs[(currentIndex + 1) % songs.length]);
+      await setCurrentSong(songs[(currentIndex + 1) % songs.length]);
     }
     if (direction === "skip-back") {
       if ((currentIndex - 1) % songs.length === -1) {
-        setCurrentSong(songs[songs.length - 1]);
-        if (isPlaying) {
-          const playPromise = audioRef.current.play();
-          if (playPromise !== undefined) {
-            playPromise.then((audio) => {
-              audioRef.current.play();
-            });
-          }
-        }
+        await setCurrentSong(songs[songs.length - 1]);
+        if (isPlaying) audioRef.current.play(); //new way
+        // //old way
+        // if (isPlaying) {
+        //   const playPromise = audioRef.current.play();
+        //   if (playPromise !== undefined) {
+        //     playPromise.then((audio) => {
+        //       audioRef.current.play();
+        //     });
+        //   }
+        // }
         return;
       }
-      setCurrentSong(songs[(currentIndex - 1) % songs.length]);
+      await setCurrentSong(songs[(currentIndex - 1) % songs.length]);
     }
-    if (isPlaying) {
-      const playPromise = audioRef.current.play();
-      if (playPromise !== undefined) {
-        playPromise.then((audio) => {
-          audioRef.current.play();
-        });
-      }
-    }
+    if (isPlaying) audioRef.current.play(); //new way
+    // //old way
+    // if (isPlaying) {
+    //   const playPromise = audioRef.current.play();
+    //   if (playPromise !== undefined) {
+    //     playPromise.then((audio) => {
+    //       audioRef.current.play();
+    //     });
+    //   }
+    // }
   };
   //creating styles
   const trackAnimation = {
