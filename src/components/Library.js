@@ -2,7 +2,13 @@ import React from "react";
 import { v4 as uuidv4 } from "uuid";
 import LibrarySong from "./LibrarySong";
 
-const Library = ({ songs, setCurrentSong }) => {
+const Library = ({
+  songs,
+  setCurrentSong,
+  audioRef,
+  isPlaying,
+  setisPlaying,
+}) => {
   return (
     <div className="library">
       <h2>Library</h2>
@@ -10,12 +16,14 @@ const Library = ({ songs, setCurrentSong }) => {
         {songs.map((song) => {
           return (
             <LibrarySong
+              audioRef={audioRef}
               songs={songs}
               key={uuidv4()}
               song={song}
-              setCurrentSong={setCurrentSong}
               id={song.id}
-              key={song.id}
+              setCurrentSong={setCurrentSong}
+              isPlaying={isPlaying}
+              setisPlaying={setisPlaying}
             />
           );
         })}
