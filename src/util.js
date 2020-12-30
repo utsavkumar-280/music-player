@@ -10,7 +10,7 @@ function Chillpop() {
       audio: "https://mp3.chillhop.com/serve.php/?mp3=7976",
       id: uuidv4(),
       color: ["#0E4466", "#77CBDE"],
-      active: false,
+      active: true,
     },
 
     {

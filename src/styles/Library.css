@@ -30,7 +30,7 @@
 }
 
 .library-song:hover {
-  background: #f3defa;
+  background: #fadefa;
 }
 
 .song-description {
@@ -62,5 +62,9 @@
   background-color: rgba(155, 155, 155, 0.5);
   border-radius: 20px;
   border: transparent;
+}
+
+.selected {
+  background: #f7c2f7;
 }
 /*# sourceMappingURL=Library.css.map */
