@@ -24,7 +24,7 @@
     width: 30%;
   }
   &:hover {
-    background: rgb(252, 233, 252);
+    background: linear-gradient(to right, white, rgba(228, 228, 228, 0.863));
   }
 }
 
@@ -58,7 +58,7 @@
 }
 
 .selected {
-  background: rgb(255, 203, 255);
+  background: linear-gradient(to right, white, rgba(201, 201, 201, 0.959));
 }
 
 .active-library {

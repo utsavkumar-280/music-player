@@ -20,7 +20,7 @@ function Chillpop() {
         "https://chillhop.com/wp-content/uploads/2020/11/f78c39b4bb6313ddd0354bef896c591bfb490ff8-1024x1024.jpg",
       audio: "https://mp3.chillhop.com/serve.php/?mp3=11768",
       id: uuidv4(),
-      color: ["#0C3D88", "#FDB762"],
+      color: ["#0C3D88", "#FB7B04"],
       active: false,
     },
     {
@@ -70,7 +70,7 @@ function Chillpop() {
         "https://chillhop.com/wp-content/uploads/2020/07/858b533ba20ff95bf5b401089b195d1a8cb43870-1024x1024.jpg",
       audio: "https://mp3.chillhop.com/serve.php/?mp3=8971",
       id: uuidv4(),
-      color: ["#14285A", "#EA9D45"],
+      color: ["#1775B3", "#EA9D45"],
       active: false,
     },
     {
