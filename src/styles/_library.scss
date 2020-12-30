@@ -1,5 +1,6 @@
 .library {
   position: fixed;
+  border-radius: 1rem;
   top: 0;
   left: 0;
   width: 20rem;
@@ -7,6 +8,7 @@
   background-color: rgb(255, 255, 255);
   box-shadow: 2px 2px 50px rgb(202, 202, 202);
   overflow: scroll;
+  background: white;
   transform: translateX(-100%);
 
   h2 {
@@ -19,6 +21,7 @@
   align-items: center;
   padding: 1rem 2rem;
   cursor: pointer;
+  transition: background 0.5s ease;
 
   img {
     width: 30%;
@@ -71,4 +74,9 @@
 
   opacity: 100%;
   transition: all 0.4s ease;
+}
+@media screen and (max-width: 768px) {
+  .library {
+    width: 100%;
+  }
 }

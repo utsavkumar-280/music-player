@@ -7,6 +7,7 @@ nav {
   align-items: center;
   button {
     background: transparent;
+    border: none;
     cursor: pointer;
     padding: 0.5rem;
     border: 2px solid #242424;
@@ -19,7 +20,6 @@ nav {
   .logo {
     display: flex;
     flex-direction: column;
-    color: #242424;
 
     a {
       text-decoration: none;
@@ -35,10 +35,14 @@ nav {
   }
 }
 
-.lib {
-  font-weight: 700;
-  color: rgb(22, 22, 22);
-}
-button:focus {
-  outline: none;
+// .lib {
+//   font-weight: 700;
+// }
+
+@media screen and (max-width: 768px) {
+  nav {
+    button {
+      z-index: 10;
+    }
+  }
 }

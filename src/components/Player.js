@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faPlay,
@@ -18,10 +18,9 @@ const Player = ({
   songs,
   setSongs,
 }) => {
-  //useEffects
-  useEffect(() => {
+  const activeLibraryHandler = (nextPrevious) => {
     const newSongs = songs.map((song) => {
-      if (song.id === currentSong.id) {
+      if (song.id === nextPrevious.id) {
         return {
           ...song,
           active: true,
@@ -34,7 +33,25 @@ const Player = ({
       }
     });
     setSongs(newSongs);
-  }, [currentSong]);
+  };
+  // //useEffects
+  // useEffect(() => {
+  //   const newSongs = songs.map((song) => {
+  //     if (song.id === currentSong.id) {
+  //       return {
+  //         ...song,
+  //         active: true,
+  //       };
+  //     } else {
+  //       return {
+  //         ...song,
+  //         active: false,
+  //       };
+  //     }
+  //   });
+  //   setSongs(newSongs);
+  // }, [currentSong]);
+
   //Event Handlers
   const playsongHandler = () => {
     if (isPlaying) {
@@ -62,10 +79,12 @@ const Player = ({
     let currentIndex = songs.findIndex((song) => song.id === currentSong.id);
     if (direction === "skip-forward") {
       await setCurrentSong(songs[(currentIndex + 1) % songs.length]);
+      activeLibraryHandler(songs[(currentIndex + 1) % songs.length]);
     }
     if (direction === "skip-back") {
       if ((currentIndex - 1) % songs.length === -1) {
         await setCurrentSong(songs[songs.length - 1]);
+        activeLibraryHandler(songs[songs.length - 1]);
         if (isPlaying) audioRef.current.play(); //new way
         // //old way
         // if (isPlaying) {
@@ -79,6 +98,7 @@ const Player = ({
         return;
       }
       await setCurrentSong(songs[(currentIndex - 1) % songs.length]);
+      activeLibraryHandler(songs[(currentIndex - 1) % songs.length]);
     }
     if (isPlaying) audioRef.current.play(); //new way
     // //old way
@@ -116,7 +136,7 @@ const Player = ({
           <div style={trackAnimation} className="animate-track"></div>
         </div>
 
-        <p>{songInfo.duration ? getTime(songInfo.duration) : "00:00"} </p>
+        <p>{songInfo.duration ? getTime(songInfo.duration) : "0:00"} </p>
       </div>
       <div className="play-control">
         <FontAwesomeIcon
