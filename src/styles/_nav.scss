@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap");
+
 nav {
   min-height: 10vh;
   display: flex;
@@ -7,11 +9,32 @@ nav {
     background: transparent;
     cursor: pointer;
     padding: 0.5rem;
-    border: 2px solid black;
+    border: 2px solid #242424;
     transition: all 0.3s ease;
     &:hover {
-      background: black;
+      background: #242424;
       color: white;
     }
   }
+  .logo {
+    display: flex;
+    flex-direction: column;
+    color: #242424;
+
+    a {
+      text-decoration: none;
+      color: #242424;
+    }
+    h1 {
+      font-weight: 900;
+    }
+    h6 {
+      font-weight: 700;
+    }
+  }
+}
+
+.lib {
+  font-weight: 700;
+  color: rgb(22, 22, 22);
 }

@@ -66,8 +66,24 @@ const Player = ({
     if (direction === "skip-back") {
       if ((currentIndex - 1) % songs.length === -1) {
         setCurrentSong(songs[songs.length - 1]);
-      } else {
-        setCurrentSong(songs[(currentIndex - 1) % songs.length]);
+        if (isPlaying) {
+          const playPromise = audioRef.current.play();
+          if (playPromise !== undefined) {
+            playPromise.then((audio) => {
+              audioRef.current.play();
+            });
+          }
+        }
+        return;
+      }
+      setCurrentSong(songs[(currentIndex - 1) % songs.length]);
+    }
+    if (isPlaying) {
+      const playPromise = audioRef.current.play();
+      if (playPromise !== undefined) {
+        playPromise.then((audio) => {
+          audioRef.current.play();
+        });
       }
     }
   };
@@ -83,7 +99,7 @@ const Player = ({
           onChange={dragHandler}
           type="range"
         />
-        <p>{getTime(songInfo.duration)} </p>
+        <p>{songInfo.duration ? getTime(songInfo.duration) : "00:00"} </p>
       </div>
       <div className="play-control">
         <FontAwesomeIcon

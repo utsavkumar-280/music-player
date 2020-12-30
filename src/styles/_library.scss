@@ -24,7 +24,7 @@
     width: 30%;
   }
   &:hover {
-    background: rgb(250, 222, 250);
+    background: rgb(252, 233, 252);
   }
 }
 
@@ -32,6 +32,7 @@
   padding-left: 1rem;
   h3 {
     font-size: 1rem;
+    font-weight: 700;
   }
   h4 {
     font-size: 0.8rem;
@@ -57,7 +58,7 @@
 }
 
 .selected {
-  background: rgb(247, 194, 247);
+  background: rgb(255, 203, 255);
 }
 
 .active-library {
