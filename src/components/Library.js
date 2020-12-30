@@ -1,5 +1,4 @@
 import React from "react";
-import { v4 as uuidv4 } from "uuid";
 import LibrarySong from "./LibrarySong";
 
 const Library = ({
@@ -25,9 +24,9 @@ const Library = ({
               audioRef={audioRef}
               songs={songs}
               setSongs={setSongs}
-              key={uuidv4()}
               song={song}
               id={song.id}
+              key={song.id}
               setCurrentSong={setCurrentSong}
               isPlaying={isPlaying}
               setisPlaying={setisPlaying}
