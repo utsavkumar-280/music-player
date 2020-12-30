@@ -14,7 +14,7 @@ const Library = ({
   return (
     <div
       className={`library ${
-        libraryStatus ? "non-active-library" : "active-library"
+        libraryStatus ? "active-library" : "non-active-library"
       }`}
     >
       <h2>Library</h2>
